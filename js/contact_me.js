@@ -19,7 +19,7 @@ $(function() {
 
             }
             $.ajax({
-                url: "//formspree.io/amre.ui1@gmail.com",
+                url: "//formspree.io/amrelhabbal1@gmail.com",
                 method: "POST",
                 data: {
                     name: name,
