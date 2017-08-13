@@ -193,8 +193,7 @@ hr {
 }
 #about img {
 	border-radius: 50%;
-	width: 200px;
-	height: 200px;
+	width: 100px;
 	display: inline-block;
 }
 #about p {
@@ -376,7 +375,7 @@ ol.type li a:hover {
 	opacity: 1;
 }
 .img-responsive {
-	height: 260px;
+	/*height: 260px;*/
 }
 #portfolio i.fa {
 	font-size: 20px;
