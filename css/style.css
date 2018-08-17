@@ -192,9 +192,7 @@ hr {
 	margin-left: 10px;
 }
 #about img {
-	border-radius: 50%;
-	width: 200px;
-	height: 200px;
+	border-radius: 175px;
 	display: inline-block;
 }
 #about p {
@@ -330,6 +328,7 @@ ol.type li a:hover {
 }
 .portfolio-item .hover-bg {
 	height: 260px;
+	width:260px;
 	overflow: hidden;
 	position: relative;
 }
@@ -375,7 +374,7 @@ ol.type li a:hover {
 	opacity: 1;
 }
 .img-responsive {
-	height: 260px;
+	/*height: 260px;*/
 }
 #portfolio i.fa {
 	font-size: 20px;
