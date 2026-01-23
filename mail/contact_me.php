@@ -1,4 +1,6 @@
-<?php
+<?php 
+error_reporting(-1);
+
 // Check for empty fields
 if(empty($_POST['name'])  		||
    empty($_POST['email']) 		||
@@ -9,16 +11,30 @@ if(empty($_POST['name'])  		||
 	return false;
    }
 
-$name = $_POST['name'];
+$name = $_POST['name']; 
 $email_address = $_POST['email'];
 $message = $_POST['message'];
 
-// Create the email and send the message
-$to = 'amrelhabbal1@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-$email_subject = "Website Contact Form:  $name";
-$email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nMessage:\n$message";
-$headers = "From: amrelhabbal1@gmail.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-$headers .= "Reply-To: $email_address";
-mail($to,$email_subject,$email_body,$headers);
-return true;
+if(isset($_POST['submit']))
+{
+$from_add = $email_address; 
+$to_add = "elhabbal_amr@yahoo.com"; 
+$subject = "Website Contact Form:  $name";
+$message = "Name:$name \n Sites: $message";
+
+$headers = 'From: elhabbal_amr@yahoo.com' . "\r\n" .
+'Reply-To: $email_address' . "\r\n" .
+'X-Mailer: PHP/' . phpversion();
+
+if(mail($to_add,$subject,$message,$headers)) 
+{
+    $msg = "Mail sent";
+
+echo $msg;
+
+} 
+}
+
+print "<p>Thanks $name</p>" ;
+
 ?>
