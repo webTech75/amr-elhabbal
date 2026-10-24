@@ -173,7 +173,7 @@ hr {
 	padding: 100px 0;
 	text-align: center;
 	color: #fff;
-	background: url(../img/Optimized-bkgd.JPG) no-repeat center top;
+	background: url(../img/hero-dots.JPG) no-repeat center top;
 	background-color: #7bc3d1;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -746,3 +746,85 @@ header .intro-text {
 	padding: 10px 100px 20px 20px;
 }
 }
+
+/* ==========================================================
+   Additions: Neura featured project, skill chips, timeline tweaks
+   (moved from index.html)
+   ========================================================== */
+:root { --accent:#608dfd; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --soft:#f6f8fc; }
+html { scroll-behavior:smooth; }
+a:focus-visible, button:focus-visible, .btn:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+
+/* Featured project: Neura */
+#neura { padding:90px 0; background:var(--soft); }
+#neura .section-title { margin-bottom:40px; }
+.nx { --bg:#101828; --panel:#182235; --edge:#2a3650; --tx:#e6ebf5; --mu:#98a2b3; background:var(--bg); color:var(--tx); border-radius:12px; padding:36px; max-width:1000px; margin:0 auto; text-align:left; box-shadow:0 20px 50px rgba(16,24,40,.25); }
+.nx-head { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; margin-bottom:26px; }
+.nx h3 { margin:0 0 6px; font-family:'Lato',sans-serif; font-weight:900; font-size:34px; color:#fff; }
+.nx-tag { color:var(--mu); font-size:17px; margin:0; max-width:48ch; line-height:1.5; }
+.nx-actions .btn { margin-left:8px; }
+.nx-tabs { display:flex; gap:6px; border-bottom:1px solid var(--edge); margin-bottom:24px; }
+.nx-tab { background:none; border:0; color:var(--mu); font:600 15px 'Open Sans',sans-serif; padding:10px 16px; border-bottom:2px solid transparent; margin-bottom:-1px; cursor:pointer; }
+.nx-tab:hover { color:var(--tx); }
+.nx-tab[aria-selected="true"] { color:#fff; border-bottom-color:var(--accent); }
+.nx-pane[hidden] { display:none; }
+
+/* Architecture explorer */
+.nx-arch { display:grid; grid-template-columns:1fr 1fr 1.3fr; gap:24px; align-items:start; }
+.nx-lane h5 { color:var(--mu); font:600 13px 'Open Sans',sans-serif; margin:0 0 12px; }
+.nx-node { display:block; width:100%; text-align:left; background:var(--panel); color:var(--tx); border:1px solid var(--edge); border-radius:8px; padding:10px 14px; font:600 14px 'Open Sans',sans-serif; cursor:pointer; position:relative; margin-bottom:22px; transition:border-color .15s, background .15s; }
+.nx-node:last-child { margin-bottom:0; }
+.nx-node:not(:last-child):after { content:""; position:absolute; left:50%; top:100%; width:2px; height:22px; background:var(--edge); }
+.nx-node:hover { border-color:var(--accent); }
+.nx-node[aria-pressed="true"] { border-color:var(--accent); background:#1d2c4d; box-shadow:0 0 0 1px var(--accent) inset; }
+.nx-node small { display:block; color:var(--mu); font-weight:400; font-size:12px; margin-top:2px; }
+.nx-detail { background:var(--panel); border:1px solid var(--edge); border-radius:8px; padding:20px; min-height:200px; }
+.nx-detail h4 { margin:0 0 8px; font:900 19px 'Lato',sans-serif; color:#fff; }
+.nx-detail p { color:#cbd5e5; line-height:1.65; margin:0 0 12px; }
+.nx-detail .nx-hint { color:var(--mu); font-size:13px; margin:0; }
+
+/* Example run */
+.nx-run-bar { display:flex; align-items:center; gap:14px; margin-bottom:14px; flex-wrap:wrap; }
+.nx-run-bar span { color:var(--mu); font-size:13px; }
+.nx-term { background:#0a111f; border:1px solid var(--edge); border-radius:8px; padding:18px; min-height:230px; font:13.5px/1.7 Menlo,Consolas,monospace; color:#cbd5e5; overflow-x:auto; }
+.nx-term div { margin-bottom:6px; white-space:pre-wrap; }
+.nx-term .u { color:#fff; }
+.nx-term .t { color:#8fb0ff; }
+.nx-term .r { color:var(--mu); }
+.nx-term .a { color:#b7e4c7; }
+
+/* Roadmap */
+.nx-road { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.nx-road h5 { margin:0 0 12px; font:700 15px 'Lato',sans-serif; color:#fff; }
+.nx-road ul { list-style:none; padding:0; margin:0; }
+.nx-road li { padding:8px 0 8px 26px; position:relative; border-bottom:1px solid var(--edge); color:#cbd5e5; }
+.nx-road li:before { position:absolute; left:0; font-family:FontAwesome; }
+.nx-road .done li:before { content:"\f00c"; color:#6ee7a8; }
+.nx-road .wip li:before { content:"\f110"; color:var(--accent); }
+
+.nx-stack { margin-top:28px; }
+.nx-stack li { background:#1d2c4d !important; color:#b9ccff !important; }
+
+@media (max-width:860px) { .nx-arch, .nx-road { grid-template-columns:1fr; } }
+@media (max-width:767px) { .nx { padding:22px; } .nx-actions .btn { margin:0 8px 8px 0; } }
+
+/* Tag chips used for tech and skills */
+.chips { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:8px; }
+.chips li { background:#eef2ff; color:#3b4fa8; border-radius:999px; padding:5px 14px; font-size:14px; font-weight:600; }
+.skill-group { max-width:980px; margin:0 auto 28px; text-align:left; }
+.skill-group h4 { font-family:'Lato',sans-serif; font-weight:700; font-size:18px; margin-bottom:12px; color:var(--ink); }
+#skills .chips li { background:#fff; border:1px solid var(--line); color:var(--ink); }
+#skills .chips li.new { border-color:var(--accent); color:#2f55c7; }
+
+/* Timeline bullets */
+.timeline-body ul { text-align:left; padding-left:18px; margin:8px 0 0; }
+.timeline-body li { margin-bottom:6px; line-height:1.5; }
+.timeline-body .chips { margin-top:12px; }
+.timeline-body .chips li { font-size:12px; padding:3px 10px; }
+
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+/* Interactive hero background */
+.intro { position: relative; overflow: hidden; }
+#hero-net { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; pointer-events: none; z-index: 0; }
+.intro .container { position: relative; z-index: 1; }
